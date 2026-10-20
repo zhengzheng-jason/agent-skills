@@ -1,0 +1,5 @@
+{
+  "name": "explain",
+  "description": "Explain a topic, code, diff, or design at four levels: STE writing, Mermaid diagram, interactive HTML page, or narrated Manim video",
+  "author": { "name": "zhengzheng-jason" }
+}
