@@ -1,6 +1,6 @@
 # agent-skills
 
-Skills for Claude Code and omp, published as a plugin marketplace.
+[Agent Skills](https://agentskills.io) for Claude Code, Codex, omp, and other agents that read `SKILL.md`. Published as a plugin marketplace.
 
 | Plugin | What it does |
 |---|---|
@@ -15,6 +15,15 @@ Claude Code:
 /plugin install explain@zhengzheng-skills
 ```
 
+Codex:
+
+```bash
+codex plugin marketplace add zhengzheng-jason/agent-skills
+codex plugin add explain@zhengzheng-skills
+```
+
+Codex loads it as the plugin skill `explain:explain`. Pick it with `/skills` or `$`, or let Codex choose it from the description.
+
 omp:
 
 ```
@@ -22,7 +31,19 @@ omp:
 /marketplace install explain@zhengzheng-skills
 ```
 
-Manual: copy or symlink `plugins/explain/skills/explain` to `~/.claude/skills/explain`.
+Any other agent (Cursor, Gemini CLI, Copilot, OpenCode, and more) via the [`skills`](https://github.com/vercel-labs/skills) CLI:
+
+```bash
+npx skills add zhengzheng-jason/agent-skills --skill explain        # current project
+npx skills add zhengzheng-jason/agent-skills --skill explain -g     # all projects
+```
+
+Manual: copy or symlink `plugins/explain/skills/explain` into your agent's skills folder:
+
+| Agent | User skills folder |
+|---|---|
+| Claude Code | `~/.claude/skills/` |
+| Codex, and other agents using the shared folder | `~/.agents/skills/` |
 
 ## Requirements
 
